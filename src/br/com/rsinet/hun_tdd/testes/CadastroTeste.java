@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_tdd.pages;
+package br.com.rsinet.hun_tdd.testes;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,6 +11,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import br.com.rsinet.hub_tdd.pages.PaginaInicial;
+import br.com.rsinet.hub_tdd.utiuls.ExcelUtiuls;
 import br.com.rsinet.hun_tdd.DadosDeCadastro;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -39,8 +41,19 @@ public class CadastroTeste {
 		 PaginaInicial.btnLogin(driver).click();
 		 PaginaInicial.btnCriarConta(driver).click();
 		 
-		 DadosDeCadastro.txtUsuario(driver).sendKeys(Keys.ENTER);
-//		 DadosDeCadastro.txtemail(driver).sendKeys(Keys.ENTER);
+		 DadosDeCadastro.txtUsuario(driver).sendKeys(ExcelUtiuls.getCellData(1, 0));
+		 DadosDeCadastro.txtemail(driver).sendKeys(ExcelUtiuls.getCellData(1, 1));
+		 DadosDeCadastro.txtSenha(driver).sendKeys(ExcelUtiuls.getCellData(1, 2));
+		 DadosDeCadastro.txtConfirmaSenha(driver).sendKeys(ExcelUtiuls.getCellData(1, 3));
+		 DadosDeCadastro.txtPrimeiroNome(driver).sendKeys(ExcelUtiuls.getCellData(1, 4));
+		 DadosDeCadastro.txtSobrenome(driver).sendKeys(ExcelUtiuls.getCellData(1, 5));
+		 DadosDeCadastro.txtTelefone(driver).sendKeys(ExcelUtiuls.getCellData(1, 6));
+		 DadosDeCadastro.cbxPais(driver);
+		 DadosDeCadastro.txtEstado(driver).sendKeys(ExcelUtiuls.getCellData(1, 7));
+		 DadosDeCadastro.txtEndereco(driver).sendKeys(ExcelUtiuls.getCellData(1, 8));
+		 DadosDeCadastro.txtCidade(driver).sendKeys(ExcelUtiuls.getCellData(1, 9));
+		 DadosDeCadastro.txtCep(driver).sendKeys(ExcelUtiuls.getCellData(1, 10));
+		 DadosDeCadastro.btnRegistrar(driver).click();;
 	}
 		 
 		 @After

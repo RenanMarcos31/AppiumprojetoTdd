@@ -30,4 +30,14 @@ public class PaginaInicial {
 		element = (MobileElement) driver.findElement(By.id("com.Advantage.aShopping:id/textViewSingUpToday"));
 		return element;
 	}
+	
+	public static WebElement btnLupa(WebDriver driver) {
+		element = (MobileElement) driver.findElement(By.id("com.Advantage.aShopping:id/editTextSearch"));
+		return element;
+	}
+	
+	public static WebElement txtLupa(WebDriver driver) {
+		element = (MobileElement) driver.findElement(By.id("com.Advantage.aShopping:id/editTextSearch"));
+		return element;
+	}
 }

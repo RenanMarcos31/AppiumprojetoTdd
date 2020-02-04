@@ -20,62 +20,63 @@ public class DadosDeCadastro {
 	}
 	
 	public static WebElement txtemail (WebDriver driver) {
-		element = driver.findElement(By.linkText("EMAIL"));
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.TextView"));
 		return element;
 	}
-	public static WebElement senha (WebDriver driver) {
-		element = driver.findElement(By.name("passwordRegisterPage"));
+	public static WebElement txtSenha (WebDriver driver) {
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.RelativeLayout/android.widget.TextView"));
 		return element;
 	}
 	
-	public static WebElement confirmaSenha (WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"formCover\"]/div[1]/div[2]/sec-view[2]/div/input"));
+	public static WebElement txtConfirmaSenha (WebDriver driver) {
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.TextView"));
 		return element;
 	}
-	public static WebElement primeiroNome (WebDriver driver) {
-		element = driver.findElement(By.name("first_nameRegisterPage"));
+	public static WebElement txtPrimeiroNome (WebDriver driver) {
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.TextView"));
 		return element;
 	}
-	public static WebElement ultimoNome (WebDriver driver) {
-		element = driver.findElement(By.name("last_nameRegisterPage"));
+	public static WebElement txtSobrenome (WebDriver driver) {
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout[2]/android.widget.TextView"));
 		return element;
 	}
-	public static WebElement telefone (WebDriver driver) {
-		element = driver.findElement(By.name("phone_numberRegisterPage"));
+	public static WebElement txtTelefone (WebDriver driver) {
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView"));
 		return element;
 	}
-	public static Select pais (WebDriver driver) {
-		Select select = new Select(driver.findElement(By.xpath("//*[@id=\"formCover\"]/div[3]/div[1]/sec-view[1]/div/select")));
+	public static Select cbxPais (WebDriver driver) {
+		Select select = new Select(driver.findElement(By.id("com.Advantage.aShopping:id/textViewCountries")));
 		select.selectByVisibleText("Brazil");
 		return select;
 	}
 	
-	public static WebElement cidade (WebDriver driver) {
-		element = driver.findElement(By.name("cityRegisterPage"));
+	public static WebElement txtCidade (WebDriver driver) {
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView"));
 		return element;
 	}
 	
-	public static WebElement endereco (WebDriver driver) {
-		element = driver.findElement(By.name("addressRegisterPage"));
+	public static WebElement txtEndereco (WebDriver driver) {
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView"));
 		return element;
 	}
 	
-	public static WebElement estado (WebDriver driver) {
-		element = driver.findElement(By.name("state_/_province_/_regionRegisterPage"));
+	public static WebElement txtEstado (WebDriver driver) {
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.TextView"));
 		return element;
 	}
 	
-	public static WebElement cep (WebDriver driver) {
-		element = driver.findElement(By.name("state_/_province_/_regionRegisterPage"));
+	public static WebElement txtCep (WebDriver driver) {
+		element = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]/android.widget.TextView"));
 		return element;
 	}
-	public static WebElement botaoAceito (WebDriver driver) {
-		element = driver.findElement(By.name("i_agree"));
-		return element;
-	}
+//	public static WebElement btnAceito (WebDriver driver) {
+//		element = driver.findElement(By.name("i_agree"));
+//		return element;
+//	}
 	
-	public static WebElement botaoRegistrar (WebDriver driver) {
-		element = driver.findElement(By.id("register_btnundefined"));
+	public static WebElement btnRegistrar (WebDriver driver) {
+		element = driver.findElement(By.id("com.Advantage.aShopping:id/buttonRegister\r\n" + 
+				""));
 		return element;
 		
 	}
