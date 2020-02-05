@@ -1,4 +1,4 @@
-package br.com.rsinet.hun_tdd;
+package br.com.rsinet.hub_tdd.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class DadosDeCadastro {
 
-	private WebDriver driver;
+	public WebDriver driver;
 	private static WebElement element;
 	
 	public void eltsCadastro(WebDriver driver) {

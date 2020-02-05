@@ -1,4 +1,4 @@
-package br.com.rsinet.hun_tdd.testes;
+package br.com.rsinet.hub_tdd.testes;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -7,13 +7,11 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import br.com.rsinet.hub_tdd.pages.DadosDeCadastro;
 import br.com.rsinet.hub_tdd.pages.PaginaInicial;
-import br.com.rsinet.hub_tdd.utiuls.ExcelUtiuls;
-import br.com.rsinet.hun_tdd.DadosDeCadastro;
 import io.appium.java_client.android.AndroidDriver;
 
 public class CadastroTeste {
@@ -41,23 +39,36 @@ public class CadastroTeste {
 		 PaginaInicial.btnLogin(driver).click();
 		 PaginaInicial.btnCriarConta(driver).click();
 		 
-		 DadosDeCadastro.txtUsuario(driver).sendKeys(ExcelUtiuls.getCellData(1, 0));
-		 DadosDeCadastro.txtemail(driver).sendKeys(ExcelUtiuls.getCellData(1, 1));
-		 DadosDeCadastro.txtSenha(driver).sendKeys(ExcelUtiuls.getCellData(1, 2));
-		 DadosDeCadastro.txtConfirmaSenha(driver).sendKeys(ExcelUtiuls.getCellData(1, 3));
-		 DadosDeCadastro.txtPrimeiroNome(driver).sendKeys(ExcelUtiuls.getCellData(1, 4));
-		 DadosDeCadastro.txtSobrenome(driver).sendKeys(ExcelUtiuls.getCellData(1, 5));
-		 DadosDeCadastro.txtTelefone(driver).sendKeys(ExcelUtiuls.getCellData(1, 6));
-		 DadosDeCadastro.cbxPais(driver);
-		 DadosDeCadastro.txtEstado(driver).sendKeys(ExcelUtiuls.getCellData(1, 7));
-		 DadosDeCadastro.txtEndereco(driver).sendKeys(ExcelUtiuls.getCellData(1, 8));
-		 DadosDeCadastro.txtCidade(driver).sendKeys(ExcelUtiuls.getCellData(1, 9));
-		 DadosDeCadastro.txtCep(driver).sendKeys(ExcelUtiuls.getCellData(1, 10));
+		 DadosDeCadastro.txtUsuario(driver).click();
+		 DadosDeCadastro.txtUsuario(driver).sendKeys("RenanMarcos1");
+		 
+		 DadosDeCadastro.txtemail(driver).click();
+		 DadosDeCadastro.txtemail(driver).sendKeys("renan@silva.com.br");
+		 DadosDeCadastro.txtSenha(driver).click();
+		 DadosDeCadastro.txtSenha(driver).sendKeys("@Test123");
+		 DadosDeCadastro.txtConfirmaSenha(driver).click();
+		 DadosDeCadastro.txtConfirmaSenha(driver).sendKeys("@Test123");
+		 DadosDeCadastro.txtPrimeiroNome(driver).click();
+		 DadosDeCadastro.txtPrimeiroNome(driver).sendKeys("Renan");
+		 DadosDeCadastro.txtSobrenome(driver).click();
+		 DadosDeCadastro.txtSobrenome(driver).sendKeys("Silva");
+		 DadosDeCadastro.txtTelefone(driver).click();
+		 DadosDeCadastro.txtTelefone(driver).sendKeys("(11) 991929394");
+		 
+//		 DadosDeCadastro.cbxPais(driver);
+		 DadosDeCadastro.txtEstado(driver).click();
+		 DadosDeCadastro.txtEstado(driver).sendKeys("SP");
+		 DadosDeCadastro.txtEndereco(driver).click();
+		 DadosDeCadastro.txtEndereco(driver).sendKeys("R. Litoral, 215");
+		 DadosDeCadastro.txtCidade(driver).click();
+		 DadosDeCadastro.txtCidade(driver).sendKeys("São Paulo");
+		 DadosDeCadastro.txtCep(driver).click();
+		 DadosDeCadastro.txtCep(driver).sendKeys("03582-190");
 		 DadosDeCadastro.btnRegistrar(driver).click();;
 	}
 		 
 		 @After
 		 public void Finalizando() {
-//			 driver.quit();
+			 driver.quit();
 		}
 }

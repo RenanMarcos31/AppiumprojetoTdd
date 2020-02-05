@@ -1,4 +1,4 @@
-package br.com.rsinet.hun_tdd.testes;
+package br.com.rsinet.hub_tdd.testes;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -15,13 +15,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.hub_tdd.pages.PaginaInicial;
-import br.com.rsinet.hub_tdd.utiuls.Constant;
+import br.com.rsinet.hub_tdd.pages.PesquisaProduto;
 import io.appium.java_client.android.AndroidDriver;
 import net.sf.cglib.beans.BeanCopier.Generator;
 
 public class PesquisaLupaTeste {
 
-	public static WebDriver driver = null;
+	public static WebDriver driver;
 	public static WebDriverWait wait;
 
 	@Before
@@ -42,36 +42,25 @@ public class PesquisaLupaTeste {
 	}
 
 	@Test
-	public void pesquisa() throws Exception {
+	public void pesquisaLupa1() throws Exception {
 
+		PaginaInicial.btnBarra(driver).click();
+		PaginaInicial.btnBarra(driver).sendKeys("TABLET");
 		PaginaInicial.btnLupa(driver).click();
-
-		PaginaInicial.txtLupa(driver).sendKeys("TABLET HP " + Keys.ENTER);
-
-//		JavascriptExecutor executor = (JavascriptExecutor) driver;
-//		executor.executeScript("arguments[0].click();", PelaBarra.clickProducto(driver));
-//
-//		Assert.assertTrue(driver.getPageSource().contains(ExcelUtils.getCellData(1, 0).toUpperCase()));
-//	}
-//
-//	@Test
-//	public void pesquisaFalhou() throws Exception {
-//
-//		wait.until(ExpectedConditions.visibilityOf(PelaBarra.botaoLupa(driver)));
-//		PelaBarra.botaoLupa(driver).click();
-//
-//		PelaBarra.barraPesquisa(driver).sendKeys(ExcelUtils.getCellData(1, 1) + Keys.ENTER);
-//		try {
-//			JavascriptExecutor executor = (JavascriptExecutor) driver;
-//			executor.executeScript("arguments[0].click();", PelaBarra.clickProducto(driver));
-//		} catch (Exception e) {
-//			Assert.assertTrue(driver.getPageSource().contains("No results for \"" + ExcelUtils.getCellData(1, 1)+ "\""));
-//		}
-//	}
-//
-//	@After
-//	public void FechaBrowser() throws Exception {
-//		Print.PrintScreenShot(driver, "target/print/" + Generator.dateHourPath() + "print.png");
-//		driver.close();
+		PesquisaProduto.btnProduto(driver).click();
+	}
+	
+	@Test
+	public void pesquisaLupa2() {
+		
+		PaginaInicial.btnBarra(driver).click();
+		PaginaInicial.btnBarra(driver).sendKeys("Microfone");
+		PaginaInicial.btnLupa(driver).click();
+		
+	}
+	
+	@After
+	public void fecharAbas() {
+		driver.quit();
 	}
 }

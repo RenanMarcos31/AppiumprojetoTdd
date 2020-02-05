@@ -16,7 +16,7 @@ public class PaginaInicial {
 			this.driver = driver;
 		}
 
-	public static MobileElement btnMenu(WebDriver driver) {
+	public static WebElement btnMenu(WebDriver driver) {
 		element = (MobileElement) driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu"));
 		return element;
 	}
@@ -31,13 +31,18 @@ public class PaginaInicial {
 		return element;
 	}
 	
-	public static WebElement btnLupa(WebDriver driver) {
+	public static WebElement btnBarra(WebDriver driver) {
 		element = (MobileElement) driver.findElement(By.id("com.Advantage.aShopping:id/editTextSearch"));
 		return element;
 	}
 	
-	public static WebElement txtLupa(WebDriver driver) {
-		element = (MobileElement) driver.findElement(By.id("com.Advantage.aShopping:id/editTextSearch"));
+	public static WebElement btnLupa(WebDriver driver) {
+		element = (MobileElement) driver.findElement(By.id("com.Advantage.aShopping:id/imageViewSearch"));
+		return element;
+	}
+	
+	public static WebElement btnLaptops(WebDriver driver) {
+		element = (MobileElement) driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.ImageView"));
 		return element;
 	}
 }

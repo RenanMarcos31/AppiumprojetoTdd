@@ -1,4 +1,4 @@
-package br.com.rsinet.hun_tdd;
+package br.com.rsinet.hub_tdd.actions;
 
 import java.util.concurrent.TimeUnit;
 
