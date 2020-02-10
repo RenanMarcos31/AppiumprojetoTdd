@@ -46,16 +46,23 @@ public class PesquisaHomeTeste {
 	}
 	
 	@Test
-	public  void pesquisaHome2()  {
+	public  void pesquisaHome2() throws Exception  {
 		
+		PaginaInicial.btnMenu(driver).click();
+		PaginaInicial.btnLogin(driver).click();
+		PaginaInicial.btnUserName(driver).click();
+		PaginaInicial.btnUserName(driver).sendKeys("RenanMarcos1");
+		PaginaInicial.btnPassword(driver).click();
+		PaginaInicial.btnPassword(driver).sendKeys("@Test123");
+		PaginaInicial.btnLogar(driver).click();
 		PaginaInicial.btnLaptops(driver).click();
+		
 		PesquisaProduto.btnNoteBook(driver).click();
-		PesquisaProduto.btnAddCarrinho(driver).click();
-		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
-		PesquisaProduto.btnUserName(driver).sendKeys("RenanMarcos1");
-		PesquisaProduto.btnPassword(driver).click();
-		PesquisaProduto.btnPassword(driver).sendKeys("@Test123");
-		PesquisaProduto.btnRegistro(driver).click();
+		PesquisaProduto.btnQuantidade(driver).click();
+		PesquisaProduto.btnQtd(driver).click();
+		PesquisaProduto.btnQtd(driver).sendKeys("8");
+		PesquisaProduto.btnAplly(driver).click();
+		PesquisaProduto.btnAddToCart(driver).click();
 	}
 	
 	@After

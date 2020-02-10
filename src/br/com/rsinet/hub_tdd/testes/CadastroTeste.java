@@ -5,18 +5,22 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import br.com.rsinet.hub_tdd.pages.DadosDeCadastro;
 import br.com.rsinet.hub_tdd.pages.PaginaInicial;
+import br.com.rsinet.hub_tdd.scroll.Scroll;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 
 public class CadastroTeste {
 	
-	 private static WebDriver  driver;
+	 private  AndroidDriver<MobileElement> driver;
+	 private TouchAction action;
 	 
 	 @Before
 	 public void Inicio() throws MalformedURLException {
@@ -34,13 +38,15 @@ public class CadastroTeste {
 	 }
 	 
 	@Test
-	public void Cadastro() throws Exception {
+	public void Cadastro1() throws Exception {
+//		action = new TouchAction(driver);
+		
 		 PaginaInicial.btnMenu(driver).click();
 		 PaginaInicial.btnLogin(driver).click();
 		 PaginaInicial.btnCriarConta(driver).click();
 		 
 		 DadosDeCadastro.txtUsuario(driver).click();
-		 DadosDeCadastro.txtUsuario(driver).sendKeys("RenanMarcos1");
+		 DadosDeCadastro.txtUsuario(driver).sendKeys("RenanMarcos3");
 		 
 		 DadosDeCadastro.txtemail(driver).click();
 		 DadosDeCadastro.txtemail(driver).sendKeys("renan@silva.com.br");
@@ -54,17 +60,42 @@ public class CadastroTeste {
 		 DadosDeCadastro.txtSobrenome(driver).sendKeys("Silva");
 		 DadosDeCadastro.txtTelefone(driver).click();
 		 DadosDeCadastro.txtTelefone(driver).sendKeys("(11) 991929394");
-		 
-//		 DadosDeCadastro.cbxPais(driver);
+		 Scroll.scrollAndClick(driver, "United States");
+		 DadosDeCadastro.listboxPaís(driver).click();
+		 Scroll.scrollAndClick(driver, "Brazil");
 		 DadosDeCadastro.txtEstado(driver).click();
 		 DadosDeCadastro.txtEstado(driver).sendKeys("SP");
-		 DadosDeCadastro.txtEndereco(driver).click();
-		 DadosDeCadastro.txtEndereco(driver).sendKeys("R. Litoral, 215");
 		 DadosDeCadastro.txtCidade(driver).click();
 		 DadosDeCadastro.txtCidade(driver).sendKeys("São Paulo");
+		 DadosDeCadastro.txtEndereco(driver).click();
+		 DadosDeCadastro.txtEndereco(driver).sendKeys("R. Litoral, 215");
 		 DadosDeCadastro.txtCep(driver).click();
 		 DadosDeCadastro.txtCep(driver).sendKeys("03582-190");
-		 DadosDeCadastro.btnRegistrar(driver).click();;
+		 DadosDeCadastro.btnRegistrar(driver).click();
+		 PaginaInicial.btnMenu(driver).click();
+	}
+	
+	@Test
+	public void Cadastro2() throws Exception {
+//		action = new TouchAction(driver);
+		
+		 PaginaInicial.btnMenu(driver).click();
+		 PaginaInicial.btnLogin(driver).click();
+		 PaginaInicial.btnCriarConta(driver).click();
+		 
+		 DadosDeCadastro.txtUsuario(driver).click();
+		 DadosDeCadastro.txtUsuario(driver).sendKeys("RenanMarcos2");
+		 
+		 DadosDeCadastro.txtemail(driver).click();
+		 DadosDeCadastro.txtemail(driver).sendKeys("renan12");
+		 DadosDeCadastro.txtSenha(driver).click();
+		 DadosDeCadastro.txtSenha(driver).sendKeys("@Test123");
+		 DadosDeCadastro.txtConfirmaSenha(driver).click();
+		 DadosDeCadastro.txtConfirmaSenha(driver).sendKeys("@Test123");
+		 DadosDeCadastro.txtPrimeiroNome(driver).click();
+		 DadosDeCadastro.txtPrimeiroNome(driver).sendKeys("Renan");
+		 DadosDeCadastro.txtSobrenome(driver).click();
+		 DadosDeCadastro.txtSobrenome(driver).sendKeys("Silva");
 	}
 		 
 		 @After
