@@ -3,16 +3,19 @@ package br.com.rsinet.hub_tdd.scroll;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
 import io.appium.java_client.FindsByAndroidUIAutomator;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class Scroll {
+	
 
     public static void scrollAndClick(WebDriver driver, String visibleText) {
         ((FindsByAndroidUIAutomator) driver).findElementByAndroidUIAutomator(
@@ -33,4 +36,11 @@ public class Scroll {
 
         return null;
     }
+    
+    public static AndroidDriver<MobileElement> scrollUp(AndroidDriver<MobileElement> driver) {
+	
+		(new TouchAction((PerformsTouchActions) driver)).press(PointOption.point(1055, 378))
+				.moveTo(PointOption.point(1059, 1744)).release().perform();
+		return  driver;
+	}
 }

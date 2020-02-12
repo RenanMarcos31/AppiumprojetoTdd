@@ -32,7 +32,8 @@ public class PesquisaProduto {
 	}
 	
 	public static MobileElement btnQtd(AndroidDriver<?> driver) {
-		return (MobileElement) driver.findElement(By.id("com.Advantage.aShopping:id/textViewProductQuantity"));
+		return (MobileElement) driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText"));
 	}
 	
 	public static MobileElement btnAplly(AndroidDriver<?> driver) {
